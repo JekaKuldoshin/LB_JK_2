@@ -3,7 +3,7 @@
 int main(void) {
 	SetConsoleCP(1251);
 	SetConsoleOutputCP(1251);
-
+	 
 	int year;
 	char name[10];
 	unsigned int size;
