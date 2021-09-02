@@ -10,18 +10,18 @@ void UFO::set(int a, char* b, unsigned int c, unsigned int d) {
 void UFO::get(int& a, char* b, unsigned int& c, unsigned int& d)
 {
 	a = sc;
-	b [0] = '\0';                     //Очистка
+	b[0] = '\0';                     //Очистка
 	b = new char[strlen(name) + 1];   //Размер
 	strcpy(b, name);                  //Копируем
-	c = size;                         
+	c = size;
 	d = mhz;
 }
 
 void UFO::show(void) {
-	
+
 	cout << "|" << setw(4) << sc << "|" << setw(21) << left <<
-	name << setw(-21) << "|" << setw(12) << size << "|" << setw(28) << mhz << "|" << endl;
-	
+		name << setw(-21) << "|" << setw(12) << size << "|" << setw(28) << mhz << "|" << endl;
+
 }
 
 void printUP()
