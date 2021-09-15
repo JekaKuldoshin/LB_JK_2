@@ -22,7 +22,7 @@ class UFO {
 	unsigned int mhz;             /*частота*/
 public:
 	void set(int a, char* b, unsigned int c, unsigned int d);
-	void get(int& a, char* b, unsigned int& c, unsigned int& d);
+	void get const(int& a, char* b, unsigned int& c, unsigned int& d);
 	void show(void);
 };
 
