@@ -1,58 +1,52 @@
 #pragma once
 #include "Fun.h"
 
-void ARR::set(int arr[N]) {
-	for (i = 0; i < N; i++)
-	{
-		cout << "Введите число массива " << c++ << " -> ";
-		cin >> *(arr + i);
-	}
-	c = 1;
+void fun_change_ref(int& v1, int& v2, int& v3) {
 
+	int min, max;
+	min = v1;
+	max = v2;
+
+	if (v2 < min) min = v2;
+	if (v2 > max) max = v2;
+	if (v3 < min) min = v3;
+	if (v3 > max) max = v3;
+	if (v1 < min) min = v1;
+	if (v1 > max) max = v1;
+
+	if (v1 == min) v1 = max;
+	else if (v1 == max) v1 = min;
+	if (v2 == min) v2 = max;
+	else if (v2 == max) v2 = min;
+	if (v3 == min) v3 = max;
+	else if (v3 == max) v3 = min;
+
+	cout << "Число 1 ->" << v1 << endl;
+	cout << "Число 2 ->" << v2 << endl;
+	cout << "Число 3 ->" << v3 << endl;
 }
 
-void ARR::show(int arr[N]) {
-	for (i = 0; i < N; i++) {
-		cout << *(arr + i) << " ";
-	}
-	cout << endl;
+void fun_change_pointer(int* v1, int* v2, int* v3) {
 
+	int min, max;
+	min = *v1;
+	max = *v2;
+
+	if (*v2 < min) min = *v2;
+	if (*v2 > max) max = *v2;
+	if (*v3 < min) min = *v3;
+	if (*v3 > max) max = *v3;
+	if (*v1 < min) min = *v1;
+	if (*v1 > max) max = *v1;
+
+	if (*v1 == min) *v1 = max;
+	else if (*v1 == max) *v1 = min;
+	if (*v2 == min) *v2 = max;
+	else if (*v2 == max) *v2 = min;
+	if (*v3 == min) *v3 = max;
+	else if (*v3 == max) *v3 = min;
+
+	cout << "Число 1 ->" << *v1 << endl;
+	cout << "Число 2 ->" << *v2 << endl;
+	cout << "Число 3 ->" << *v3 << endl;
 }
-
-void ARR::swap_ref(int(&arr)[N]) {
-	for (i = 0; i < N; i++) {
-		if (*(arr + i) < *(arr + min))
-		{
-			min = i;
-		}
-		if (*(arr + i) > * (arr + max))
-		{
-			max = i;
-		}
-	}
-
-	b = *(arr + min);
-	*(arr + min) = *(arr + max);
-	*(arr + max) = b;
-
-
-}
-
-void ARR::swap_indicator(int* arr) {
-	for (i = 0; i < N; i++) {
-		if (*(arr + i) < *(arr + min))
-		{
-			min = i;
-		}
-		if (*(arr + i) > * (arr + max))
-		{
-			max = i;
-		}
-	}
-
-	b = *(arr + min);
-	*(arr + min) = *(arr + max);
-	*(arr + max) = b;
-
-}
-
