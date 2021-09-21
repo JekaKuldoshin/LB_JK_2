@@ -20,6 +20,7 @@ int main(void) {
 	int menu2;
 
 	while (true) {            // Цикл для меню
+		system("cls");
 		cout << "                Меню                            |" << endl;
 		cout << "------------------------------------------------|" << endl;
 		cout << "1 - Работа Set   | 3 - Работа Get&Show          |" << endl;
@@ -127,6 +128,7 @@ int main(void) {
 				cout << "-------------------------------------------------------------|\n";
 				cout << "                         5 - Выход                           |" << endl;
 				cout << "-------------------------------------------------------------|" << endl;
+				cout << "Сделайте свой выбор -> ";
 				cin >> menu2;
 
 				switch (menu2)
@@ -140,17 +142,75 @@ int main(void) {
 
 					printDOWN();
 
-					cout << "Введите желаемую позицию для смены значения - >";
+					cout << "Введите желаемую позицию для смены значения - > ";
 					cin >> var;
+					var--;
 					cout << "\nВведите год -> ";
 					cin >> year;
 
-					obj[var--].set_sc(year);
+					obj[var].set_sc(year);
 
 					break;
 				case 2:
+					system("cls");
+					printUP();
 
+					for (i = 0; i < N; i++)
+						obj[i].show();
+
+					printDOWN();
+
+					cout << "Введите желаемую позицию для смены значения - > ";
+					cin >> var;
+					var--;
+					cout << "\nВведите имя руководителя -> ";
+					cin >> name;
+
+					obj[var].set_name(name);
 					break;
+				case 3:
+					system("cls");
+					printUP();
+
+					for (i = 0; i < N; i++)
+						obj[i].show();
+
+					printDOWN();
+
+					cout << "Введите желаемую позицию для смены значения - > ";
+					cin >> var;
+					var--;
+					cout << "\nВведите диаметр -> ";
+					cin >> size;
+
+					obj[var].set_size(size);
+					break;
+				case 4:
+					system("cls");
+					printUP();
+
+					for (i = 0; i < N; i++)
+						obj[i].show();
+
+					printDOWN();
+
+					cout << "Введите желаемую позицию для смены значения - > ";
+					cin >> var;
+					var--;
+					cout << "\nВведите частоту -> ";
+					cin >> mhz;
+
+					obj[var].set_mhz(mhz);
+					break;
+					case 5:
+						
+						break;
+
+					default:
+						system("cls");
+						cout << "Ошибка!! Пункт меню отсутствует!!!\nДля перехода в меню нажмите любую клавишу... " << endl;
+						_getch();
+						break;
 				}
 			
 			
@@ -163,64 +223,16 @@ int main(void) {
 				system("cls");
 			}
 				break;
+				case 5:
+					return 0;
+					break;
 
+				default:
+					system("cls");
+					cout << "Ошибка!! Пункт меню отсутствует!!!\nДля перехода в меню нажмите любую клавишу... " << endl;
+					_getch();
+					break;
 		}
-
-		/*for (int i = 0; i < N; i++)
-		{
-			cout << "Работа функции SET!   |\n";
-			cout << "----------------------|\n\n";
-			cout << "Введите данные: " << endl;
-			cout << "Введите год -> ";
-			cin >> year;
-			cout << "Введите имя научного руководителя -> ";
-			cin >> name;
-			cout << "Введите диаметр антены -> ";
-			cin >> size;
-			cout << "Введите рабочую частоту -> ";
-			cin >> mhz;
-			obj[i].set(year, name, size, mhz);
-			system("cls");
-		}
-		system("cls");*/
-
-		//////////////
-
-		/*cout << "Работа функции SHOW!  |\n";
-		cout << "----------------------|\n\n";
-
-		printUP();
-
-		for (i = 0; i < N; i++)
-			obj[i].show();
-
-		printDOWN();
-		cout << "\n";
-
-		_getch();
-		system("cls");*/
-
-		//////////////
-
-	/*	cout << "Работа функции GET и SHOW!   |\n";
-		cout << "-----------------------------|\n\n";
-
-		NUL(year, name, size, mhz);
-
-		printUP();
-		for (i = 0; i < N; i++)
-		{
-			obj[i].get(year, name, size, mhz);
-			obj[i].show();
-		}
-		printDOWN();
-		cout << "\n";
-
-		_getch();
-
-		name[0] = '\0';
-		return 0;*/
-
 	}
 
 	return 0;

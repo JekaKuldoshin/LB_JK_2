@@ -23,19 +23,13 @@ class UFO {
 public:
 	void set(int a, char* b, unsigned int c, unsigned int d);
 
-	void set_sc(int a);
+	void set_sc(int a);                 //Отдельные SET для изменения их через консоль
 	void set_name(char* b);
 	void set_size(unsigned int c);
 	void set_mhz(unsigned int d);
 
-		/*sc = a;
-	strcpy(name, b);
-	size = c;
-	mhz = d;*/
-
-
-	void get (int& a, char* b, unsigned int& c, unsigned int& d);
-	void show (void) ;
+	void get (int& a, char* b, unsigned int& c, unsigned int& d);     //Для копирования данных с переменной
+	void show () ;
 };
 
 void printUP();         //Вывод вверхней шапки
