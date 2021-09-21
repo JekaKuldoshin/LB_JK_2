@@ -27,7 +27,7 @@ void UFO::set_mhz(unsigned int d) {
 
 
 
-void UFO::get (int& a, char* b, unsigned int& c, unsigned int& d)
+void UFO::get (int& a, char* b, unsigned int& c, unsigned int& d) const
 {
 	a = sc;
 	strcpy(b, name);                  //Копируем
@@ -35,7 +35,7 @@ void UFO::get (int& a, char* b, unsigned int& c, unsigned int& d)
 	d = mhz;
 }
 
-void UFO::show ()  {
+void UFO::show () const  {
 
 	cout << "|" << setw(4) << sc << "|" << setw(21) << left <<
 		name << setw(-21) << "|" << setw(12) << size << "|" << setw(28) << mhz << "|" << endl;

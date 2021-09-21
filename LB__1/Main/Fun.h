@@ -28,8 +28,8 @@ public:
 	void set_size(unsigned int c);
 	void set_mhz(unsigned int d);
 
-	void get (int& a, char* b, unsigned int& c, unsigned int& d);     //Для копирования данных с переменной
-	void show () ;
+	void get (int& a, char* b, unsigned int& c, unsigned int& d) const;     //Для копирования данных с переменной
+	void show () const;
 };
 
 void printUP();         //Вывод вверхней шапки
