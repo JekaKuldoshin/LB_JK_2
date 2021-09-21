@@ -94,13 +94,13 @@ int main(void) {
 				cout << "Работа функции GET и SHOW!   |\n";
 				cout << "-----------------------------|\n\n";
 
-				NUL(year, name, size, mhz);
+				NUL(year, name, size, mhz);                    //Специально обнулил значения переменных
 
 				printUP();
 				for (i = 0; i < N; i++)
 				{
-					obj[i].get(year, name, size, mhz);
-					obj[i].show();
+					obj[i].get(year, name, size, mhz);    //использую get
+					obj[i].show();                       //Вывожу через Show
 				}
 				printDOWN();
 				cout << "\n";
