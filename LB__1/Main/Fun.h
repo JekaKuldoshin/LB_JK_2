@@ -11,7 +11,7 @@
 #include <stdio.h>
 #include <iomanip>
 
-#define N 3
+#define N 2
 
 using namespace std;
 
@@ -22,11 +22,24 @@ class UFO {
 	unsigned int mhz;             /*частота*/
 public:
 	void set(int a, char* b, unsigned int c, unsigned int d);
-	void get const(int& a, char* b, unsigned int& c, unsigned int& d);
-	void show(void);
+
+	void set_sc(int a);
+	void set_name(char* b);
+	void set_size(unsigned int c);
+	void set_mhz(unsigned int d);
+
+		/*sc = a;
+	strcpy(name, b);
+	size = c;
+	mhz = d;*/
+
+
+	void get (int& a, char* b, unsigned int& c, unsigned int& d);
+	void show (void) ;
 };
 
-void printUP();
-void printDOWN();
+void printUP();         //Вывод вверхней шапки
+void printDOWN();      //Вывод нижней шапки
+void NUL(int year, char name[10], int size, int  mhz);   //Очистка данных в главной функции
 
 #endif
