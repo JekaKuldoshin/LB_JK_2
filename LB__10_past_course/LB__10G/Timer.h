@@ -12,17 +12,8 @@ class TIMER {
 
 public:
 	TIMER(int s) :second(s) {}                          //Конструктор с параметрами, для инициализации секунд
-	TIMER(int m, int s) :minute(m), second(s) {}        //Конструктор с параметрами, для инициализации минут и секунд
+	TIMER(int m, int s) :minute(m), second(s) { second = minute * 60 + second; }        //Конструктор с параметрами, для инициализации минут и секунд, подсчет секунд
 	TIMER(const  TIMER& ob) : minute(ob.minute), second(ob.second) {}    //Конструктор копирования
 
-	void show() {                           //В зависимости от того что приймет конструктор, то и будет выведенно
-		if (minute == 0)
-		{
-			cout << "Функция вывода кол-ва секунд -> " << second << endl;
-		}
-		else
-		{
-			cout << "Функция вывода кол-ва минут и секунд -> " << minute << ":" << second << endl;
-		}
-	}
+	void show() const;                         //Функция вывода секунд
 };
