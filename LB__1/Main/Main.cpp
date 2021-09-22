@@ -1,8 +1,8 @@
 ﻿#include "fun.h"
 
 int main(void) {
-	SetConsoleCP(1251);
-	SetConsoleOutputCP(1251);
+	SetConsoleCP(1251);            //Руссификатор для ввода
+	SetConsoleOutputCP(1251);     //Руссификатор для вывода
 
 	int year;               //Переменные для инициализации ввода
 	char name[10];
@@ -10,13 +10,13 @@ int main(void) {
 	unsigned int mhz;
 	short i;                 //Переменная для подсчета иттераций
 
-	bool check = false;
-	int var;
+	bool check = false;          //Лог. переменная для меню от неправильного использования программы
+	int var;                    //Переменная для обозначения места изменения данных
 
 	UFO obj[N];            //Создал объект для обращения к классу
 	 
 
-	int menu;
+	int menu;       //Переменные для меню
 	int menu2;
 
 	while (true) {            // Цикл для меню
@@ -54,7 +54,7 @@ int main(void) {
 			}
 			system("cls");
 			cout << "Успех! Данные были иннициализированны!\n\nДля перехода в меню нажмите любую клавишу..." << endl;
-			check = true;
+			check = true;       
 			_getch();
 			system("cls");
 			break;

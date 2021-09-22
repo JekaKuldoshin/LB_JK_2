@@ -8,7 +8,7 @@ using namespace std;
 
 class TIMER {
 	int second;           //Переменная для секунд
-	int minute = 0;      //Переменная для минут
+	int minute;      //Переменная для минут
 
 public:
 	TIMER(int s) :second(s) {}                          //Конструктор с параметрами, для инициализации секунд

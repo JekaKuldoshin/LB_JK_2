@@ -1,7 +1,7 @@
 #pragma once
 #include "Fun.h"
 
-void fun_change_ref(int& v1, int& v2, int& v3) {
+void fun_change(int& v1, int& v2, int& v3) {
 
 	int min, max;
 	min = v1;
@@ -26,7 +26,7 @@ void fun_change_ref(int& v1, int& v2, int& v3) {
 	cout << "Число 3 ->" << v3 << endl;
 }
 
-void fun_change_pointer(int* v1, int* v2, int* v3) {
+void fun_change(int* v1, int* v2, int* v3) {
 
 	int min, max;
 	min = *v1;
