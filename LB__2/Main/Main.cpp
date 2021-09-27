@@ -1,21 +1,20 @@
-﻿#include "fun.h"
+﻿#include "Fun.h"
 
 int main(void) {
 	SetConsoleCP(1251);
 	SetConsoleOutputCP(1251);
 
-
-	char* n;
+	int n;
 	char* t;
 	unsigned int s;
-	float h;
+	unsigned int h;
 	short i, k;
 	unsigned int s1;
 	short q, q1;
 
-	church obj[N] = { church("Тодайдзи","Т",220,368.8),
-					  church("Якусидзи","С",50,54.7),
-					  church("Дайандзи","Д",10,12.2) };
+	church obj[N] = { church(1923,"Т",220,3684),
+					  church(1440,"С",50,5444),
+					  church(2020,"Д",10,1233) };
 	system("cls");
 
 	cout.precision(2);

@@ -1,4 +1,4 @@
-#pragma once
+п»ї#pragma once
 #ifndef XT
 #define XT
 #define  _CRT_SECURE_NO_WARNINGS
@@ -12,25 +12,27 @@
 #include <math.h>
 #include <iomanip>
 
-#define N 3             //количество экземпляров класса
+#define N 3             //РєРѕР»РёС‡РµСЃС‚РІРѕ СЌРєР·РµРјРїР»СЏСЂРѕРІ РєР»Р°СЃСЃР°
 
 using namespace std;
 
 class church {
-	char* name;
-	char* school;
-	unsigned int count;
-	float square;
+	int sc;                       /*ГЈГ®Г¤*/
+	char* name[10];                /*ГЁГ¬Гї*/
+	unsigned int size;            /*Г¤ГЁГ Г¬ГҐГІГ°*/
+	unsigned int mhz;             /*Г·Г Г±ГІГ®ГІГ */
+
 	friend ostream& operator<<(ostream& stream, church& o1);
 	friend istream& operator>>(istream& stream, church& o1);
+
 	friend void shapka(void);
 	friend void linebuild(void);
 	friend int isvalid(int a, int b);
 public:
-	church() { square = 0; count = 0; }
-	church(char* a, char* b, unsigned int& c, float& d);
-	void setall(char* a, char* b, unsigned int, float);
-	void getall(char* a, char* b, unsigned int& c, float& d);
+	church() { sc = 0, name[1] = "----",size = 0; mhz = 0; }
+	church(int a, char* b, unsigned int& c, unsigned int& d);
+	void setall(int a, char* b, unsigned int, unsigned int);
+	void getall(int a, char* b, unsigned int& c, unsigned int& d);
 	void showall(void);
 	church operator = (church& o1);
 	int    operator == (church& o1);

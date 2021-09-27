@@ -2,20 +2,21 @@
 
 ostream& operator<<(ostream& stream, church& o1) {
     shapka();
-    stream << "|" << setw(10) << o1.name << "  |  ";
-    stream << setw(5) << o1.school << "|";
-    stream << setw(18) << o1.count << "  |";
-    stream << setw(17) << o1.square << "  |"; endl;
+    cout << "|" << setw(4) << o1.sc << "|" << setw(21) << left <<
+        o1.name << setw(-21) << "|" << setw(12) << o1.size << "|" << setw(28) << o1.mhz << "|" << endl;
     linebuild();
     return stream;
 }
 
 istream& operator>>(istream& stream, church& o1) {
-    cout << "Название, Школа, Количество монахов, Площадь земли: \n";
-    stream >> o1.name;
-    stream >> o1.school;
-    stream >> o1.count;
-    stream >> o1.square;
+    for (int i = 0; i < N; i++)
+    {
+        cout << "Название, Школа, Количество монахов, Площадь земли: \n";
+        stream >> o1.sc;
+        stream >> o1.name[i];
+        stream >> o1.size;
+        stream >> o1.mhz;
+    }
     return stream;
 }
 
@@ -39,96 +40,112 @@ church church::operator + (church& o1) {
     church tr;
     int i, j;
     delete[] tr.name;
-    delete[] tr.school;
-    tr.name = new char[strlen(name) + strlen(o1.name) + 2];
-    strcpy(tr.name, name);
-    strcat(tr.name, o1.name);
-    tr.school = new char[strlen(school) + strlen(o1.school) + 2];
-    strcpy(tr.school, school);
-    strcat(tr.school, o1.school);
-    tr.count = count + o1.count;
-    tr.square = square + o1.square;
+    
+    tr.sc = sc + o1.sc;
+    for (int i = 0; i < N; i++)
+    {
+        tr.name[i] = new char[strlen(name[i]) + strlen(o1.name[i]) + 2];
+        strcpy(tr.name[i], name[i]);
+        strcat(tr.name[i], o1.name[i]);
+    }
+    tr.size = size + o1.size;
+    tr.mhz = mhz + o1.mhz;
+
     return tr;
 }
 
 int church::operator == (church& o1) {
-    if (count != o1.count) { cout << "Данные экземпляры класса не равны."; getch(); }
-    else if (ceil(square) != ceil(o1.square)) { cout << "Данные экземпляры класса не равны."; getch(); }
-    else if (strcmp(name, o1.name) != 0) { cout << "Данные экземпляры класса не равны."; getch(); }
-    else if (strcmp(school, o1.school) != 0) { cout << "Данные экземпляры класса не равны."; getch(); }
-    else cout << "Экземпляры класса равны."; getch();
+    for (int i = 0; i < N; i++)
+    {
+        if (size != o1.size) { cout << "Данные экземпляры класса не равны."; getch(); }
+        else if (ceil(mhz) != ceil(o1.mhz)) { cout << "Данные экземпляры класса не равны."; getch(); }
+        else if (strcmp(name[i], o1.name[i]) != 0) { cout << "Данные экземпляры класса не равны."; getch(); }
+        else if (ceil(sc) != ceil(o1.sc)) { cout << "Данные экземпляры класса не равны."; getch(); }
+        else cout << "Экземпляры класса равны."; getch();
+    }
     return 0;
 }
 
 church church::operator = (church& o1) {
     delete[] name;
-    delete[] school;
-    name = new char[strlen(o1.name) + 2];
-    if (!name) {
-        cout << "Ошибка! Память не выделена.";
-        exit(1);
+
+    for (int i = 0; i < N; i++)
+    {
+        sc = o1.sc;
+        name[i] = new char[strlen(o1.name[i]) + 2];
+        if (!name) {
+            cout << "Ошибка! Память не выделена.";
+            exit(1);
+        }
+        strcpy(name[i], o1.name[i]);
+ 
+        size = o1.size;
+        mhz = o1.mhz;
     }
-    strcpy(name, o1.name);
-    school = new char[strlen(o1.school) + 2];
-    if (!school) {
-        cout << "Ошибка! Память не выделена.";
-        exit(1);
-    }
-    strcpy(school, o1.school);
-    count = o1.count;
-    square = o1.square;
     return o1;
 }
 
-church::church(char* a, char* b, unsigned int& c, float& d) {
-    name = new char[strlen(a) + 1];
-    strcpy(name, a);
-    school = new char[strlen(b) + 1];
-    strcpy(school, b);
-    count = c;
-    square = d;
+church::church(int a, char* b, unsigned int& c, unsigned int& d) {
+    for (int i = 0; i < N; i++)
+    {
+        sc = a;
+        name[i] = new char[strlen(b) + 1];
+        strcpy(name[i], b);
+        size = c;
+        mhz = d;
+    }
 }
 
-void church::setall(char* a, char* b, unsigned int c, float d) {
-    strcpy(name, a);
-    strcpy(school, b);
-    count = c;
-    square = d;
+void church::setall(int a, char* b, unsigned int c, unsigned int d) {
+    for (int i = 0; i < N; i++)
+    {
+        sc = a;
+        strcpy(name[i], b);
+        size = c;
+        mhz = d;
+    }
 }
 
 void church::showall(void) {
+    cout << sc << " ";
     cout << name << " ";
-    cout << school << " ";
-    cout << count << " ";
-    cout << square << " ";
+    cout << size << " ";
+    cout << mhz << " ";
 }
 
-void church::getall(char* a, char* b, unsigned int& c, float& d)
+void church::getall(int a, char* b, unsigned int& c, unsigned int& d)
 {
-    delete[] a;
+
     delete[] b;
-    a = new char[strlen(name) + 1];
-    b = new char[strlen(school) + 1];
-    strcpy(a, name);
-    strcpy(b, school);
-    c = count;
-    d = square;
-    cout << a << " ";
-    cout << b << " ";
-    cout << c << " ";
-    cout << d << " ";
-    cout << "\n";
+
+    for (int i = 0; i < N; i++)
+    {
+        b = new char[strlen(name[i]) + 1];
+        strcpy(b, name[i]);
+
+        c = size;
+        d = mhz;
+        cout << a << " ";
+        cout << b[i] << " ";
+        cout << c << " ";
+        cout << d << " ";
+        cout << "\n";
+
+    }
 }
 
 void shapka(void)
 {
-    cout << "_______________________________________________________________\n";
-    cout << "|         Буддистские монастыри Японии периода Нара           |\n";
-    cout << "|-------------------------------------------------------------|\n";
-    cout << "|  Название  | Школа | Количество монахов | Площадь земли(га) |\n";
-    cout << "|-------------------------------------------------------------|\n";
+    cout << "----------------------------------------------------------------------" << endl;
+    cout << "|                  Проекты поиска внеземных сигналов                 |" << endl;
+    cout << "|--------------------------------------------------------------------|" << endl;
+    cout << "|Год |Научный              |Диаметр     |Рабочая частота             |" << endl;
+    cout << "|    |руководитель         |антенны (м) |частота (МГц)               |" << endl;
+    cout << "|----|---------------------|------------|----------------------------|" << endl;
 }
 
 void linebuild(void) {
-    cout << "\n|-------------------------------------------------------------|\n";
+    cout << "|--------------------------------------------------------------------|" << endl;
+    cout << "|Примечание: наблюдались объекты от 2 звезд до нескольких галактик   |" << endl;
+    cout << "----------------------------------------------------------------------" << endl;
 }
