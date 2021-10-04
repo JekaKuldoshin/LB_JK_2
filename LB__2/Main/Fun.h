@@ -7,37 +7,44 @@
 #include "windows.h"
 #include <stdlib.h>
 #include <conio.h>
-#include <string.h>
 #include <stdio.h>
-#include <math.h>
 #include <iomanip>
 
 #define N 3             //количество экземпляров класса
 
 using namespace std;
 
-class church {
-	int sc;                       /*ãîä*/
-	char* name[10];                /*èìÿ*/
-	unsigned int size;            /*äèàìåòð*/
-	unsigned int mhz;             /*÷àñòîòà*/
+class UFO {
+	int sc;                       /*год*/
+	char* name;                  /*имя*/
+	unsigned int size;          /*диаметр*/
+	unsigned int mhz;          /*частота*/
 
-	friend ostream& operator<<(ostream& stream, church& o1);
-	friend istream& operator>>(istream& stream, church& o1);
+	friend ostream& operator<<(ostream& stream, UFO& obj);
+	friend istream& operator>>(istream& stream, UFO& obj);
 
-	friend void shapka(void);
-	friend void linebuild(void);
-	friend int isvalid(int a, int b);
+	friend void shapka();    //Друж. функ-я для вывода верхней части табл.
+	friend void linebuild();  //Друж. функ-я для вывода нижней части табл.
+	friend int isvalid(int a, int b);  //Друж. функ-я для проверки ввода
+
 public:
-	church() { sc = 0, name[1] = "----",size = 0; mhz = 0; }
-	church(int a, char* b, unsigned int& c, unsigned int& d);
-	void setall(int a, char* b, unsigned int, unsigned int);
-	void getall(int a, char* b, unsigned int& c, unsigned int& d);
-	void showall(void);
-	church operator = (church& o1);
-	int    operator == (church& o1);
-	church operator + (church& o1);
-};
+	UFO();     //Конструктор по умол.
+	UFO(int sc, const char* na, unsigned int size, unsigned int mhz);
 
+	void setall(int a, char* b, unsigned int, unsigned int);
+	void getall(int a, char* b, unsigned int& c, unsigned int& d) const;
+	void showall() const;
+	void show() const;
+
+	UFO operator = (const UFO& obj);
+	void operator == (const UFO& obj);
+	UFO operator + (const UFO& obj);
+};
+void shapka();
+void linebuild();
+int isvalid(int a, int b);
+
+
+void FunShowall(UFO obj[3]);
 
 #endif
