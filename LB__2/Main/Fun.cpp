@@ -1,6 +1,6 @@
 #include "fun.h"
 
-UFO::UFO() {
+UFO::UFO() {   //Конструктор по умолчанию
     sc = 0;
     size = 0;
     mhz = 0;

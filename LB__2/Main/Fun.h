@@ -20,8 +20,8 @@ class UFO {
 	unsigned int size;          /*диаметр*/
 	unsigned int mhz;          /*частота*/
 
-	friend ostream& operator<<(ostream& stream, UFO& obj);
-	friend istream& operator>>(istream& stream, UFO& obj);
+	friend ostream& operator<<(ostream& stream, UFO& obj);    //Перегрузка оператора потокового вывода '<<'
+	friend istream& operator>>(istream& stream, UFO& obj);   //Перегрузка оператора потокового ввода '>>'
 
 	friend void shapka();    //Друж. функ-я для вывода верхней части табл.
 	friend void linebuild();  //Друж. функ-я для вывода нижней части табл.
@@ -31,20 +31,20 @@ public:
 	UFO();     //Конструктор по умол.
 	UFO(int sc, const char* na, unsigned int size, unsigned int mhz);
 
-	void setall(int a, char* b, unsigned int, unsigned int);
+	void setall(int a, char* b, unsigned int, unsigned int);            
 	void getall(int a, char* b, unsigned int& c, unsigned int& d) const;
 	void showall() const;
 	void show() const;
 
-	UFO operator = (const UFO& obj);
-	void operator == (const UFO& obj);
-	UFO operator + (const UFO& obj);
+	UFO operator = (const UFO& obj);     //Перегрузка оператора присваивания '='
+	void operator == (const UFO& obj);  //Перегрузка оператора соответствия '=='
+	UFO operator + (const UFO& obj);   //Перегрузка оператора суммы '+'
 };
-void shapka();
-void linebuild();
-int isvalid(int a, int b);
+void shapka();              //Вывод вверхней шапки
+void linebuild();          //Вывод нижней шапки
+int isvalid(int a, int b);  //Проверка на правильность ввода
 
 
-void FunShowall(UFO obj[3]);
+void FunShowall(UFO obj[3]);  //Функ-я для вывода данных
 
 #endif
