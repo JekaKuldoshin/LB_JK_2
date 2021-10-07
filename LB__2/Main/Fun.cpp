@@ -207,3 +207,15 @@ void FunShowall(UFO obj[3]) {
     }
 
 }
+
+int UFO::operator[] (int i) {
+    return strlen(name);
+}
+
+void UFO::operator()(){
+    sc = 0;
+    strcpy(name, "------");
+    size = 0;
+    mhz = 0;
+
+}

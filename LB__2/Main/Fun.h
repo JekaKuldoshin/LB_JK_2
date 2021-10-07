@@ -39,6 +39,10 @@ public:
 	UFO operator = (const UFO& obj);     //Перегрузка оператора присваивания '='
 	void operator == (const UFO& obj);  //Перегрузка оператора соответствия '=='
 	UFO operator + (const UFO& obj);   //Перегрузка оператора суммы '+'
+
+	int operator[] (int i);    //Перегрузка для нахождение длины Char*
+	void operator() ();       //Перегркзка для инициализации 
+
 };
 void shapka();              //Вывод вверхней шапки
 void linebuild();          //Вывод нижней шапки
