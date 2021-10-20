@@ -31,7 +31,7 @@ public:
 	UFO();     //Конструктор по умол.
 	UFO(int sc, const char* na, unsigned int size, unsigned int mhz);
 
-	void setall(int a, char* b, unsigned int, unsigned int);            
+	/*void setall(int a, char* b, unsigned int, unsigned int);*/            
 	void getall(int a, char* b, unsigned int& c, unsigned int& d) const;
 	void showall() const;
 	void show() const;

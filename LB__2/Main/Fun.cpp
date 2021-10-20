@@ -30,15 +30,15 @@ void UFO::show() const {
 
 }
 
-void UFO::setall(int a, char* b, unsigned int c, unsigned int d) {
-    for (int i = 0; i < N; i++)
-    {
-        sc = a;
-        strcpy(name, b);
-        size = c;
-        mhz = d;
-    }
-}
+//void UFO::setall(int a, char* b, unsigned int c, unsigned int d) {
+//    for (int i = 0; i < N; i++)
+//    {
+//        sc = a;
+//        strcpy(name, b);
+//        size = c;
+//        mhz = d;
+//    }
+//}
 
 void UFO::getall(int a, char* b, unsigned int& c, unsigned int& d) const
 {
@@ -195,7 +195,7 @@ ostream& operator <<(ostream& stream, UFO& obj)
 
 
 
-void FunShowall(UFO obj[3]) {
+void FunShowall(UFO obj[3]) {    //Фун-я вывода 
     int check = 0;
 
     cout << "Год, Имя научного руководителя, Диаметр антены, Рабочая частота: \n";
