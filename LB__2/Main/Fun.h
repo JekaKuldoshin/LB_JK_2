@@ -38,7 +38,7 @@ public:
 
 	UFO operator = (const UFO& obj);     //Перегрузка оператора присваивания '='
 	void operator == (const UFO& obj);  //Перегрузка оператора соответствия '=='
-	UFO operator + (const UFO& obj);   //Перегрузка оператора суммы '+'
+	friend UFO operator + (const UFO& obj, UFO& obj1);   //Перегрузка оператора суммы '+'
 
 	int operator[] (int i);    //Перегрузка для нахождение длины Char*
 	void operator() ();       //Перегркзка для инициализации 

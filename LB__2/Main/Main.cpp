@@ -4,7 +4,7 @@ int main() {
 	SetConsoleCP(1251);
 	SetConsoleOutputCP(1251);
 
-	int n = 0;                /*год*/
+	int n = 0;                /*год*/                /*Передаем переменные в getall*/
 	char* t;                 /*имя*/
 	unsigned int s;         /*диаметр*/
 	unsigned int h;        /*частота*/

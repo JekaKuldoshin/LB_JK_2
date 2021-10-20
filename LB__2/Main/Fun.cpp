@@ -141,18 +141,18 @@ void UFO:: operator == (const UFO& obj) {
     }
 }
 
-UFO UFO::operator + (const UFO& obj) {
+UFO operator + (const UFO& obj,UFO& obj1) {
     UFO temp;
     delete[] temp.name;
 
-    temp.sc = this->sc + obj.sc;
+    temp.sc = obj.sc + obj1.sc;
 
-    temp.name = new char(strlen(name) + strlen(obj.name) + 2);
-    strcpy(temp.name, name);
+    temp.name = new char(strlen(obj.name) + strlen(obj1.name) + 2);
+    strcpy(temp.name, obj.name);
     strcat(temp.name, obj.name);
 
-    temp.size = this->size + obj.size;
-    temp.mhz = this->mhz + obj.mhz;
+    temp.size = obj.size + obj1.size;
+    temp.mhz = obj.mhz + obj1.mhz;
     return temp;
 }
 
