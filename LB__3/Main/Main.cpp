@@ -1,60 +1,24 @@
-﻿
-/*
-	Лабораторная работа №3
-	Множественное наследование в языке С++
-	Вариант №25
-	Пример выполнения
-	После рефакторинга
-*/
+﻿#include "Inheritance_Class.h"
 
-#include <iostream>
-#include <conio.h>
-using namespace std;
 
-class B1 {
-	int a;
-public:
-	B1(int x) { a = x; }
+int main()
+{
+    D3 d3(0, 1, 2, 3,5);       //Обратился к классу D3 и передал по классам значения 
+    
+    d3.show();        //Вывел результат в консоль
+    cout << endl;
 
-};
 
-class B2 {
-	int b;
-public:
-	B2(int x) { b = x; }
 
-};
+    B1* p = new B1(1);    //Обращение к виртуальному базовому классу
+    p->show();           //Вывел значения B1
 
-class D1 : public B1 {
-	int c;
-public:
-	D1(int x, int y) : B1(y) { c = x; };
+    p = new D1(2, 3);   //Обращение к виртуальному базовому классу
+    p->show();         //Вывел значения B1 and D1
 
-};
+    D2* p1 = new D3(6, 7, 8, 9, 10);   //Обращение к виртуальному базовому классу
+    p1->show();                        //Для изменения занчений 
 
-class D2 : private D1 {
-	int d;
-public:
-	D2(int x, int y, int z) : D1(y, z) { d = x; };
-};
-
-class D3 :  public D2 {
-	int e;
-public:
-	D3(int x, int y, int z) : D2(y, z) { e = x; };
-};
-
-class B2 : private D3 {
-	int f;
-public:
-	B2(int x, int y, int z) : D3(y, z) { f = x; };
-};
-
-int main() {
-	setlocale(LC_ALL, "Ukrainian");
-	system("cls");
-	
-
-	_getch();
-	return 0;
+    _getch();
+   
 }
