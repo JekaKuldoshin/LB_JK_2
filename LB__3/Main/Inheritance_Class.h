@@ -1,6 +1,7 @@
 #pragma once
 #include <iostream>
 #include <conio.h>
+#include <Windows.h>
 using namespace std;
 
 class B1                      //Базовый класс В1
@@ -10,7 +11,7 @@ protected:                  //Предоставляю доступ для других классов для использ
 public:
     B1(int b1value) :b1(b1value) {};                                //Конструктор с парам.
     virtual void show() { cout << endl << "B1 = " << b1 << endl; }  //
-
+    virtual ~B1() {};
     /*friend ostream& operator <<(std::ostream& out, const B1& ob) {
         out << "  B1 = " << ob.b1 << endl;
         return out;
@@ -25,6 +26,7 @@ protected:
 public: 
     B2(int b2value) :b2(b2value) {};                               //Конструктор с парам.
     virtual void show() { cout << endl << "b2 = " << b2 << endl; }  //Фун-я для вывода
+    virtual ~B2() {};
 };
 
 class D1 :virtual public B1
@@ -38,6 +40,7 @@ public:
         cout << endl << "B1 = " << b1 << endl << "D1 = " << d1 << endl;
         //Фун-я для вывода
     }
+    virtual ~D1() {};
 };
 
 class D2 :virtual protected D1
@@ -51,6 +54,7 @@ public:
         cout << endl << "B1 = " << b1 << endl << "D1 = " << d1 << endl << "D2 = " << d2 << endl;
         //Фун-я для вывода
     }
+    virtual ~D2() {};
 };
 
 class D3 :virtual public D2, private B2
@@ -64,10 +68,12 @@ public:
         cout << endl << "B1 = " << b1 << endl << "D1 = " << d1 << endl << "D2 = " << d2 << endl << "D3 = " << d3 << endl << "B2 = " << b2 << endl;
 
         cout << "\n------------\n";
-        cout << D3::b1 << endl;
-        cout << D3::b2 << endl;
+        cout << "Вывел два базовых класса: " << endl;
+        cout << "B1 = " << D3::b1 << endl;
+        cout << "B2 = " << D3::b2 << endl;
         cout << "------------\n";
 
+        cout << "Вывожу поочередно наследовательно классы: " << endl;
         cout << "D3 = " << d3;
         cout << "   D3::d2 = " << D3::d2;
         cout << "   D2::d1 = " << D2::d1;
@@ -76,5 +82,5 @@ public:
        
 
     } 
-    /*virtual ~D3() {};*/     //Дэструктор 
+    virtual ~D3() {};     //Дэструктор 
 };
