@@ -36,11 +36,11 @@ ostream& operator <<(ostream& stream, UFO& obj)
 }
 
 
-void UFO::setall(int a, string b, unsigned int c, unsigned int d) {
+void UFO::setall(int a, char* b, unsigned int c, unsigned int d) {
     for (int i = 0; i < N; i++)
     {
         sc = a;
-        name = b;
+        strcpy(name, b);
         size = c;
         mhz = d;
     }
