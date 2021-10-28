@@ -6,9 +6,9 @@ int main()
     setlocale(LC_ALL, "rus");
 
     DB db1("DB1");
-    db1.add_rec(1923, "Т", 220, 3684);
-    db1.add_rec(1440, "С", 50, 5444);
-    db1.add_rec(2020, "Д", 10, 1233);
+    db1.add_rec(1923, "Тt", 220, 3684);
+    db1.add_rec(1440, "Сc", 50, 5444);
+    db1.add_rec(2020, "Дd", 10, 1233);
 
     int n = 0;                /*год*/                /*Передаем переменные в getall*/
 	char* t;                 /*имя*/

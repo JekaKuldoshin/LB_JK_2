@@ -6,6 +6,7 @@ using namespace std;
 
 class B1                      //Базовый класс В1
 {
+    
 protected:                  //Предоставляю доступ для других классов для использования переменной b1
     int b1;
 public:

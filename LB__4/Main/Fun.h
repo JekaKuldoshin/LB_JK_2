@@ -28,11 +28,9 @@ class UFO {
 public:
 
 	UFO();     //Конструктор по умол.
-	UFO(int sc, const char* na, unsigned int size, unsigned int mhz) { 
-		setall(sc, na, size, mhz); 
-	}
+	UFO(int sc, const char* na, unsigned int size, unsigned int mhz);
 
-	void setall(int a, char* b, unsigned int, unsigned int);
+	void setall(int a, const char* b, unsigned int, unsigned int);
 	void getall(int a, char* b, unsigned int& c, unsigned int& d) const;
 	void showall() const;
 	void show() const;
@@ -48,7 +46,7 @@ public:
 	DB();
 	DB(string q);
 	~DB() { if (col) for (int i = 0; i < col; i++) delete rows[i]; }
-	void add_rec(int a, string b, unsigned int c, unsigned int d);
+	void add_rec(int a, const char* b, unsigned int c, unsigned int d);
 	void del_rec();
 	void sort_DB();
 	friend ostream& operator<<(ostream& stream, DB& temp);

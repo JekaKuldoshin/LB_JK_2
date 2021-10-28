@@ -36,7 +36,7 @@ ostream& operator <<(ostream& stream, UFO& obj)
 }
 
 
-void UFO::setall(int a, char* b, unsigned int c, unsigned int d) {
+void UFO::setall(int a, const char* b, unsigned int c, unsigned int d) {
     for (int i = 0; i < N; i++)
     {
         sc = a;
@@ -46,7 +46,7 @@ void UFO::setall(int a, char* b, unsigned int c, unsigned int d) {
     }
 }
 
-void DB::add_rec(int a, string b, unsigned int c, unsigned int d) {
+void DB::add_rec(int a, const char* b, unsigned int c, unsigned int d) {
     if (col >= 12) return;
     else col++;
     rows[col - 1] = new UFO(a, b, c, d);
