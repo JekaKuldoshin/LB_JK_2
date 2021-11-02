@@ -24,12 +24,41 @@ void linebuild() {
 
 ostream& operator <<(ostream& stream, UFO& obj)
 {
-    shapka();
+   
 
     stream << "|" << setw(4) << obj.sc << "|" << setw(21) << left <<
         obj.name << setw(-21) << "|" << setw(12) << obj.size << "|" << setw(28) << obj.mhz << "|" << endl;
 
-    linebuild();
+    
+
+    return stream;
+
+}
+
+ostream& operator <<(ostream& stream, DB& obj)
+{
+    
+
+    if (!obj.col) {
+        stream << "Ошибка! Строки были не обнаруженны!" << endl;
+    }
+    else {
+        shapka();
+        for (int i = 0; i < obj.col; i++) {
+            stream << *obj.rows[i];
+        }
+        linebuild();
+    }
+
+    stream << endl <<  "Название базы данных -> ";
+    stream << obj.title << endl;   //Выводим название базы данных
+    stream << "Состояние базы данных -> ";
+    if (obj.sorted == 0) {
+        stream << "Не отсортированная." << endl;
+    }
+    else {
+        stream << "Отсортированная." << endl;
+    }
 
     return stream;
 
@@ -68,7 +97,7 @@ void DB::sort_DB() {
 
     for (int i = 0; i < col; i++)
         for (int j = i + 1; j < col; j++) {
-            s1 = rows[i]->ret_name();
+            s1 = rows[i]->getName();
             s2 = rows[j]->ret_name();
             if (s1 > s2) {
                 temp = rows[i];

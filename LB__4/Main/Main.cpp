@@ -3,55 +3,78 @@
 
 int main()
 {
-    setlocale(LC_ALL, "rus");
+    SetConsoleCP(1251);
+    SetConsoleOutputCP(1251);
 
-    DB db1("DB1");
-    db1.add_rec(1923, "Тt", 220, 3684);
-    db1.add_rec(1440, "Сc", 50, 5444);
-    db1.add_rec(2020, "Дd", 10, 1233);
+    DB db1 ("DB1");
+    db1.add_rec(1923, "Петров", 220, 3684);
+    db1.add_rec(1440, "Шинкаренко", 50, 5444);
+    db1.add_rec(2020, "Буто", 10, 1233);
 
-    int n = 0;                /*год*/                /*Передаем переменные в getall*/
-	char* t;                 /*имя*/
+    int sc = 0;                /*год*/                /*Передаем переменные в getall*/
+	char* n;                 /*имя*/
 	unsigned int s;         /*диаметр*/
-	unsigned int h;        /*частота*/
+	unsigned int m;        /*частота*/
 
-    int num;
+    int menu;       //Переменные для меню
     
-    t = new char[10];
+    n = new char[10];
 
-    do
-    {
-        cout << db1 << endl;
-        cout << endl << setw(15) << "Add - 1" << endl; cout << setw(15) << "Delete - 2" << endl; cout << setw(15) << "Sort - 3" << endl; cout << setw(15) << "Exit - 4" << endl;
-        cin >> num;
-        switch (num)
+        while (true) {            // Цикл для меню
+            system("cls");
+            cout << "                     Меню                                 |" << endl;
+            cout << "----------------------------------------------------------|" << endl;
+            cout << "1 - Вывести базу       | 3 - Удалить запись               |" << endl;
+            cout << "2 - Добавить запись    | 4 - Сортировать базу по алфавиту |" << endl;
+            cout << "----------------------------------------------------------|" << endl;
+            cout << "                    5 - Выход                             |" << endl;
+            cout << "----------------------------------------------------------|" << endl;
+            cout << "Сделайте свой выбор -> ";
+            cin >> menu;
+        
+        switch (menu)
         {
         case 1:
             system("cls");
 
-            cin >> n;  /*Закомментированные строки отвечают за чтение значений*/
-            cin >> t;   /*переменных с клавиатуры и записи их в поля объекта.*/
-            cin >> s;  /* Для удобства работы используется инициализация через*/
-            cin >> h;  /* конструктор 3-х объектов.*/
-            db1.add_rec(n, t, s, h);
+            cout << db1 << endl;
+            
+            cout << "\nНажмите клавишу для продолжения...";
+            _getch();
 
-            system("cls");
             break;
+
         case 2:
             system("cls");
-            db1.del_rec();
+
+            cout << "Введите данные: " << endl;
+            cout << "Введите год -> ";
+            cin >> sc;  /*Закомментированные строки отвечают за чтение значений*/
+            cout << "Введите имя научного руководителя -> ";
+            cin >> n;   /*переменных с клавиатуры и записи их в поля объекта.*/
+            cout << "Введите диаметр антены -> ";
+            cin >> s;  /* Для удобства работы используется инициализация через*/
+            cout << "Введите рабочую частоту -> ";
+            cin >> m;  /* конструктор 3-х объектов.*/
+            db1.add_rec(sc, n, s, m);
+
             system("cls");
             break;
         case 3:
             system("cls");
-            db1.sort_DB();
+            db1.del_rec();
             system("cls");
             break;
         case 4:
+            system("cls");
+            db1.sort_DB();
+            system("cls");
+            break;
+        case 5:
             EXIT_SUCCESS;
             exit(3);
         default:
             break;
         }
-    } while (num <= 6 && num >= 0);
+    }
 }

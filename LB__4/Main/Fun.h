@@ -32,15 +32,19 @@ public:
 
 	void setall(int a, const char* b, unsigned int, unsigned int);
 	void getall(int a, char* b, unsigned int& c, unsigned int& d) const;
+	char getName() { return *name; }
 	void showall() const;
 	void show() const;
 	char  ret_name() { return *name; }
+	int   ret_sc() { return sc;}
+
+	friend ostream& operator<<(ostream& stream, UFO& temp);
 };
 
 class DB {
-	string title;       /*название базы данных*/
-	UFO* rows[12];  /*количество строк в базе данных*/
-	int col;   /*индекс строк в базе данных*/
+	string title;      /*название базы данных*/
+	UFO* rows[12];    /*количество строк в базе данных*/
+	int col;         /*индекс строк в базе данных*/
 	bool sorted; /* флаг, показывающий отсортирована / неотсортирована база данных*/
 public:
 	DB();
