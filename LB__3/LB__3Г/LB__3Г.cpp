@@ -22,7 +22,7 @@ int main() {
 	tt->show();
 
 	_getch();
-
+	system("cls");
 
 	cout << "Введите стороны прямоугольника:" << endl;
 	cout << "Сторона а -> ";
@@ -35,7 +35,7 @@ int main() {
 	rr->show();
 
 	_getch();
-
+	system("cls");
 
 	cout << "Введите стороны круга:" << endl;
 	cout << "Сторона а -> ";

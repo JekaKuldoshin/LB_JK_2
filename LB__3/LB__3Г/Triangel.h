@@ -32,7 +32,7 @@ public:
 	}
 
 	void show() override {
-		cout << "Зона треугольника -> " << area() << endl;
+		cout << "Площадь треугольника -> " << area() << endl;
 
 	}
 

@@ -4,6 +4,7 @@
 #include <conio.h>
 #include <iostream>
 #include <string>
+#include <math.h>
 
 #include <corecrt_math_defines.h>
 

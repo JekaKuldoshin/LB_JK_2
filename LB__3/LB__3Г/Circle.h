@@ -10,7 +10,7 @@ public:
 	}
 
 	void show() override {
-		cout << "Зона круга: " << area() << endl;
+		cout << "Площадь круга: " << area() << endl;
 	}
 
 

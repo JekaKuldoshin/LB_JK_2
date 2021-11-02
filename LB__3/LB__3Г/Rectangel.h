@@ -13,7 +13,7 @@ public:
 
 	void show() override {
 
-		cout << "Зона прямоугольника -> "<< area() << endl;
+		cout << "Площадь прямоугольника -> "<< area() << endl;
 	}
 
 
