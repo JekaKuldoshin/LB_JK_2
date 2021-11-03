@@ -5,11 +5,11 @@ int main() {
 	SetConsoleCP(1251);
 	SetConsoleOutputCP(1251);
 
-	SOBAKA tmp(3.5,12);
+	/*SOBAKA tmp(3.5,12);
 
 	cout << "\n-------------" << endl;
 	
-	tmp.golos();
+	tmp.golos();*/
 	
 	cout << "\n-------------" << endl;
 	
@@ -20,6 +20,10 @@ int main() {
 	tmp1.golos();
 
 	cout << endl << endl;
+
+	SPANIEL tmp2(5.0, 14, "Yellow");
+
+	tmp2.golos();
 
 	_getch();
 }

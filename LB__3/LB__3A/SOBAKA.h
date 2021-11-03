@@ -12,9 +12,9 @@ protected:
 
 public:
 	SOBAKA() {
-		weight = 5.0;
-		age = 5;
-		cout << "Конструктор 'SOBAKA': \nВес -> " << weight << "\nВозраст -> " << age << endl;
+		//weight = 5.0;
+	//	age = 5;
+		cout << "Конструктор 'SOBAKA";//: \nВес -> " << weight << "\nВозраст -> " << age << endl;
 		cout << "\n-------------" << endl;
 	}
 

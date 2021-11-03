@@ -44,9 +44,10 @@ public:
 class DB {
 	string title;      /*название базы данных*/
 	UFO* rows[12];    /*количество строк в базе данных*/
-	int col;         /*индекс строк в базе данных*/
+	
 	bool sorted; /* флаг, показывающий отсортирована / неотсортирована база данных*/
 public:
+	int col;         /*индекс строк в базе данных*/
 	DB();
 	DB(string q);
 	~DB() { if (col) for (int i = 0; i < col; i++) delete rows[i]; }

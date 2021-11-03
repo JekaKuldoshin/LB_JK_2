@@ -107,6 +107,10 @@ int main()
 					}
 
 				}
+				else
+				{
+					cout << "ERROR" << endl;
+				}
 			}
 			if (!b) {
 				system("cls");

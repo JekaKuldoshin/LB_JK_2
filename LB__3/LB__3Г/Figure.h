@@ -17,6 +17,7 @@ public:
 	Figure() {
 
 	}
+	/*set(a,b=0,c=0)*/
 
 	virtual void show() = 0;
 };
