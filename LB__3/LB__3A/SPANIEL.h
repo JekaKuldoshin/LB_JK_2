@@ -4,7 +4,7 @@ private:
 	string color;
 public:
 	SPANIEL() {
-		cout << "Without ifo." << endl;
+		cout << "Без информации." << endl;
 	}
 	SPANIEL(double w, int a, string c) {
 		weight = w;

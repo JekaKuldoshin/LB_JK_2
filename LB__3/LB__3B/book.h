@@ -32,3 +32,4 @@ public:
 		cout << setw(10) << name << setw(10) << author << setw(10) << pages;
 	}
 };
+

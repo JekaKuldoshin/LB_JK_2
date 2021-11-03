@@ -24,7 +24,7 @@ public:
 	bool getAvail() {
 		return available;
 	}
-	string boolToTxt(bool av) {
+	string boolToTxt(bool av) {          //Выводит одно из двух 
 		string a;
 		if (av) {
 			a = "в наличии";
@@ -35,10 +35,5 @@ public:
 	void show() override {
 		Book::show(); cout << setw(8) << catalog << setw(17) << boolToTxt(available) << endl;
 	}
-	void took() {
-		available = false;
-	}
-	void returned() {
-		available = true;
-	}
+	
 };

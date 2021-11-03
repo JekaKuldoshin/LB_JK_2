@@ -48,15 +48,17 @@ int main()
 			system("cls");
 			break;
 
+			///////////////////
+
 		case 2:
 			system("cls");
 			show(mas);
 
-			cout << "\nВведите название книги для поиска во всем списке: "; 
+			cout << "\nВведите название книги для поиска во всем списке: ";
 			cin >> a;
 
 			cout << endl;
-			
+
 			for (int i = 0; i < 3; i++)
 			{
 				if (mas[i].getName() == a)         //Если имя проходит проверку... ->
@@ -71,19 +73,21 @@ int main()
 			}
 			if (!b) {
 				cout << "Книги с таким именем нет в списке" << endl;
-				cout << "\n\nДля перехода в меню нажмите любую клавишу...";
 			}
 
-			
+
 			cout << "\n\nДля перехода в меню нажмите любую клавишу...";
 			_getch();
 			break;
+
+			///////////////////
+
 		case 3:
 			system("cls");
 
 			show(mas);
 
-			cout << "\nВведите название книги которую хотите взять: "; 
+			cout << "\nВведите название книги которую хотите взять: ";
 			cin >> a;
 			for (int i = 0; i < 3; i++)
 			{
@@ -112,6 +116,8 @@ int main()
 			cout << "\n\nДля перехода в меню нажмите любую клавишу...";
 			_getch();
 			break;
+
+			///////////////////
 
 		case 4:
 			system("cls");
@@ -148,11 +154,15 @@ int main()
 			_getch();
 			break;
 
+			///////////////////
+
 		case 5:
 			system("cls");
 			cout << "Thanks for your attention!!" << endl << endl;
 			return 0;
 			break;
+
+			///////////////////
 
 		default:
 			system("cls");
@@ -161,54 +171,4 @@ int main()
 			break;
 		}
 	}
-			
-
-
-
-
-
-
-
-
-	
-
-	/*show(mas);
-	
-	cout << "--------------------------------------------------------" << endl;
-	cout << "\nВведите название книги для поиска во всем списке: "; cin >> a;
-	cout << endl;
-	bool b = false;
-	for (int i = 0; i < 3; i++)
-	{
-		if (mas[i].getName() == a)
-		{
-			b = true;
-			cout << "Книга в наличии" << endl;
-			if (mas[i].getAvail() == true) {
-				cout << "Эта книга на данный момент доступна в библиотеке" << endl;
-				break;
-			}
-			else cout << "На данный момент книги нет в наличии" << endl;
-		}
-	}
-	if (!b)cout << "Книги с таким именем нет в списке" << endl;
-	system("pause");*/
-
-	/*system("cls");
-	show(mas);
-	cout << "Введите название книги которую хотите взять: "; cin >> a;
-	for (int i = 0; i < 3; i++)
-	{
-		if (mas[i].getName() == a)
-		{
-			if (mas[i].getAvail() != true) {
-				cout << "На данный момент книги нет вналичии" << endl;
-				break;
-			}
-			else mas[i].setAvail(false);
-		}
-	}
-	system("cls");
-	show(mas);*/
-
 }
