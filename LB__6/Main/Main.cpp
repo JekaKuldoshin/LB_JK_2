@@ -78,13 +78,20 @@ int main()
             break;
         case 4:
             system("cls");
-            print(obj, 5);
+            if (q)              //Если False программа не дает зайти в сортировку
+            {
+                print(obj, 5);
+            }
+            else
+            {
+                cout << "Ошибка! База данных пуста." << endl;
+            }
             cout << "\nДля перехода в меню нажмите любую клавишу...";
             _getch();
             break;
         case 5:
             EXIT_SUCCESS;
-            exit(3);
+            exit(1);
         default:
             system("cls");
             cout << "Ошибка!! Пункт меню отсутствует!!!\nДля перехода в меню нажмите любую клавишу... " << endl;
