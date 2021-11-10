@@ -11,8 +11,8 @@ void Comp::print() {
 }
 
 void write(Comp& ob, string name) {
-	fstream fout;
-	fout.open(name, ios::app);
+	fstream fout;               //Подключил заголовочный файл
+	fout.open(name, ios::app);    //открываем и дописываем в конце файла
 	fout << ob.a;
 	fout << " + i";
 	fout << ob.b;
@@ -22,7 +22,7 @@ void write(Comp& ob, string name) {
 double read(double* mass, string name) {
 	double K;
 	int n = 0;
-	ifstream fin(name);
+	ifstream fin(name);   //Файловый ввод переменной name      функция передвижения указателя
 	while (fin >> K)
 	{
 		mass[n++] = K;

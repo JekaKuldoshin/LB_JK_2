@@ -36,11 +36,11 @@ int main()
 			f.open("7B.bin", fstream::out | fstream::trunc | fstream::binary);  //Открываем -> сбрасываем содержимое -> Открываем бинарный файл
 			if (f.is_open()) {
 				i = 0;
-				cout << "Запись в файл было выполенно успешно!!" << endl;
 				for (int i = 0; i < 10; i++)   //Заполняем числами от 0 до 9
 				{
 					f.write((char*)&i, sizeof(i));   
 				}
+				cout << "Запись в файл было выполенно успешно!!" << endl;
 				f.close();  //Закрыли файл
 			}
 			_getch();
@@ -49,13 +49,14 @@ int main()
 		case 2:
 			system("cls");
 			i = 0;
-			cout << "Запись в файл было выполенно успешно!!" << endl;
+			
 			f.open("7B.bin", fstream::out | fstream::trunc | fstream::binary);  //Открываем -> сбрасываем содержимое -> Открываем бинарный файл
 			if (f.is_open()) {
 				for (int i = 1; i < 11; i++)   //Заполняем числами от 1 до 11
 				{
 					f.write((char*)&i, sizeof(i));
 				}
+				cout << "Запись в файл было выполенно успешно!!" << endl;
 				f.close();
 			}
 			cout << endl << endl;
@@ -76,7 +77,7 @@ int main()
 					{
 						break;
 					}
-					f.read((char*)&b[c], sizeof(b[i]));
+					f.read((char*)&b[c], sizeof(b[i]));                  //считываем и присваиваем массиву
 					cout << b[c] << " ";      //Выводим элементы массива
 					c++;
 				}
