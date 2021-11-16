@@ -2,6 +2,7 @@
 #include <fstream>
 #include <Windows.h>
 #include <string>
+#include <ctime>
 
 using namespace std;
 
@@ -11,12 +12,12 @@ protected:
 
 public:
 	
-	UFO() {};
-	UFO(string l);
-	string getLine();
+	UFO() {};        // по” 
+	UFO(string l);  // сѕ
+	string getLine();    //Get
+	char operator [](int index);  //ѕерегрузка []
 	
-
 };
 
-void ();
-string fun2();
+void write(UFO&obj);    //‘унк-€ записи в файл
+string read(UFO& obj);  //‘унк-€ чтени€ из файл
