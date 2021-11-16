@@ -10,9 +10,11 @@ int main()
 	SetConsoleOutputCP(1251);
 
 	number <double> a;
-	number<double> b;
-	cout << "Ввежите первое чило (int/double) -> "; cin >> a;
-	cout << "Ввежите второе чило (int/double) -> "; cin >> b;
+	number <double> b;
+	cout << "Введите первое чило (int/double) -> "; 
+	cin >> a;
+	cout << "Введите второе чило (int/double) -> "; 
+	cin >> b;
 	number<double> c;
 	c = a / b;
 	cout << "a / b = " << c << endl;

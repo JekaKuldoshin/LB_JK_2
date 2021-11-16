@@ -1,5 +1,5 @@
 #include <iostream>
-#include <Windows.h>
+#include <windows.h>
 
 using namespace std;
 
@@ -7,22 +7,23 @@ template<class T>
 class number
 {
 public:
-	T num;
-	number() {
+	T num;        //—оздал переменную
+
+	number() {        // по”
 		num = 0;
 	}
-	number(T a) {
+	number(T a) {     // сѕ
 		num = a;
 	}
 
-	template<class T>
+	template<class T>                   //ќбъ€вл€ю обобщенный класс 
 	friend ostream& operator << (ostream&, number<T>&);
 	template<class T>
 	friend istream& operator >> (istream&, number<T>&);
 
 };
 
-template <class T>
+template <class T>                     //ќбъ€вл€ю обобщенный класс 
 ostream& operator<<(ostream& stream, number<T>& a)
 {
 	stream << a.num;
