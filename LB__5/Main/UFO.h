@@ -2,7 +2,7 @@
 #include <fstream>
 #include <Windows.h>
 #include <string>
-#include <ctime>
+#include <ctime>     //Подключил библиотеку для рандомных чисел
 
 using namespace std;
 
