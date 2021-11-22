@@ -11,11 +11,12 @@ int main()
 
 	number <double> a;
 	number <double> b;
-	cout << "Введите первое чило (int/double) -> "; 
+	number <double> c;
+	cout << "Введите первое чило (/double) -> "; 
 	cin >> a;
-	cout << "Введите второе чило (int/double) -> "; 
+	cout << "Введите второе чило (/double) -> "; 
 	cin >> b;
-	number<double> c;
+	
 	c = a / b;
 	cout << "a / b = " << c << endl;
 	c = a * b;
@@ -24,4 +25,23 @@ int main()
 	cout << "a + b = " << c << endl;
 	c = a - b;
 	cout << "a - b = " << c << endl;
+
+
+	number <int> a1;
+	number <int> b1;
+	number <int> c1;
+
+	cout << "Введите первое чило (int) -> ";
+	cin >> a1;
+	cout << "Введите второе чило (int) -> ";
+	cin >> b1;
+
+	c1 = a1 / b1;
+	cout << "a / b = " << c1 << endl;
+	c1 = a1 * b1;
+	cout << "a * b = " << c1 << endl;
+	c1 = a1 + b1;
+	cout << "a + b = " << c1 << endl;
+	c1 = a1 - b1;
+	cout << "a - b = " << c1 << endl;
 }
