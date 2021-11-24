@@ -43,7 +43,6 @@ void CheakNum(int number) {
 	fil.read((char*)&num, sizeof(int));      //Читаем с файла 4 элемент
 	cout << endl << endl << num;            //Выводим элемент
 
-	number;
 
 	if (num % 2 == 0) {                   //Если четное
 		fil.seekp(0);               //указатель вывода на (0) на начало файла
@@ -60,5 +59,5 @@ void CheakNum(int number) {
 		cout << " -> не четное" << endl << endl;
 	}
 
-	fil.close();
+	fil.close();          //Закрыли файл
 }
