@@ -13,7 +13,9 @@ public:
 
 	Name operator = (Name& obj);
 	
-
+	friend bool operator == (const Name& a, const Name& b);
+	friend bool operator < (const Name& a, const Name& b);
+	friend ostream& operator << (ostream& stream, const Name& a);
 
 };
 

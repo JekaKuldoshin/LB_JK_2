@@ -10,10 +10,10 @@ int main() {
 	SetConsoleOutputCP(1251);
 
 	//MIN
-	double a = 6.4;
-	double b = 10.8;
+	int a = 6;
+	int b = 10;
 	cout <<"Минимальное число -> " << min1(a, b);
-	/*assert(min1(a, b) == a && "а не больше б");*/
+	assert(min1(a, b) == a && "а не больше б");
 
 
 	cout << endl << endl;
@@ -22,13 +22,20 @@ int main() {
 
 	vector <int> mas1 = { -1,22,13,-43,55,16 };
 	vector <int> mas2 = { 11,52,-13,-44,53,76 };
-	sort1(mas2);
+	sort1(mas1);
 
 	for (int i = 0; i < mas1.size(); i++) {
-		cout << mas2[i] << "\t";
+		cout << mas1[i] << "\t";
+		assert(mas1[i] == mas2[i] && "Не правильно отсортированно");
 	}
 
+	cout << endl << endl;
 
+	/*SUM*/
+
+	cout << "Сумма: "; 
+	cout << sum1(mas2);
+	assert(sum1(mas2) == 3 && "Сумма не правильная!");
 
 }
 

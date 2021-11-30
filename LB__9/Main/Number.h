@@ -29,8 +29,3 @@ public:
 
 };
 
-
-bool operator == (const Number& a, const Number& b);
-bool operator < (const Number& a, const Number& b);
-
-inline ostream& operator << (ostream& stream, const Number& a);
