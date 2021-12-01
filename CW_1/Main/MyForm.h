@@ -518,7 +518,7 @@ namespace Myproject {
 		}
 
 	}
-	private: System::Void aboutToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
+	private: System::Void aboutToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {    //Запуск файла Help
 		System::Diagnostics::Process::Start("Help.htm");
 	}
 
@@ -602,7 +602,4 @@ namespace Myproject {
 
 
 
-//
-//•	Предметна область ІС : Договірна діяльність організації Мінімальний список характеристик : 
-//• Шифр договору, найменування організації, терміни виконання, сума договору, примітки вид договору;
-//• номер, ПІБ, адреса, телефон, посада, оклад співробітників, терміни роботи даного співробітника за даним договором.
+

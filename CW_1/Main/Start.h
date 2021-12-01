@@ -341,7 +341,7 @@ namespace Myproject {
 
 		}
 #pragma endregion
-	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
+	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {         //êíîïêà îê
 		Int64 flag = 0;
 		if (textBox1->Text != "") {
 			flag++;
@@ -385,7 +385,7 @@ namespace Myproject {
 	private: System::Void Start_Load(System::Object^ sender, System::EventArgs^ e) {
 	}
 
-	private: System::Void ñîõğàíèòüÂÔàéëToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
+	private: System::Void ñîõğàíèòüÂÔàéëToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {  //Ñîõğàíåíèÿ â ôàéë
 		Stream^ myStream;
 		SaveFileDialog^ saveFileDialog1 = gcnew SaveFileDialog;
 		saveFileDialog1->InitialDirectory = "D:\\LB_JK_2\\LB_JK_2\\CW_1\\Main\\TEST\\Start";
@@ -428,8 +428,8 @@ namespace Myproject {
 
 
 	}
-	private: System::Void çàïîëíèòüÑÔàéëàToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
-		Stream^ myStream;
+	private: System::Void çàïîëíèòüÑÔàéëàToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {    //Çàïîëíåíèå ñ ôàéëà
+		Stream^ myStream; 
 		OpenFileDialog^ openFileDialog1 = gcnew OpenFileDialog;
 		openFileDialog1->InitialDirectory = "D:\\LB_JK_2\\LB_JK_2\\CW_1\\Main\\TEST\\Start";
 		openFileDialog1->Filter = "";
