@@ -427,10 +427,10 @@ namespace Myproject {
 	}
 	private: System::Void button4_Click(System::Object^ sender, System::EventArgs^ e) {        //Добавить запись
 		System::Windows::Forms::DialogResult dialres;
-		Form2^ newdlg = gcnew Form2();
+		Form2^ newdlg = gcnew Form2(); // виклик форми додавання запису
 		dialres = newdlg->ShowDialog();
-		if (dialres == System::Windows::Forms::DialogResult::OK) {
-			Student->SetNumber(Convert::ToInt16(newdlg->textBox1->Text));
+		if (dialres == System::Windows::Forms::DialogResult::OK) { //Перевірка на правильність уведення даних при натисканні кнопки «Проверка»
+			Student->SetNumber(Convert::ToInt16(newdlg->textBox1->Text));  //присвоєння значень полей класу значень з форми додавання
 			Student->SetName(newdlg->textBox2->Text);
 			Student->SetAddress(newdlg->textBox3->Text);
 			Student->SetPhone(Convert::ToInt64(newdlg->textBox4->Text));
@@ -438,29 +438,13 @@ namespace Myproject {
 			Student->SetWages(Convert::ToInt32(newdlg->textBox6->Text));
 			Student->SetDeadline(newdlg->textBox7->Text);
 
-			//Student->SetControl(System::Convert::ToInt16(newdlg->textBox4->Text), 0);
-			//Student->SetControl(System::Convert::ToInt16(newdlg->textBox7->Text), 1);
-			//Student->SetControl(System::Convert::ToInt16(newdlg->textBox10->Text), 2);
-			//Student->SetControlScore(System::Convert::ToInt16(newdlg->textBox17->Text));
-			//Student->SetFact(System::Convert::ToInt16(newdlg->textBox3->Text), 0);
-			//Student->SetFact(System::Convert::ToInt16(newdlg->textBox6->Text), 1);
-			//Student->SetFact(System::Convert::ToInt16(newdlg->textBox9->Text), 2);
-			//Student->SetPlan(System::Convert::ToInt16(newdlg->textBox2->Text), 0);
-			//Student->SetPlan(System::Convert::ToInt16(newdlg->textBox5->Text), 1);
-			//Student->SetPlan(System::Convert::ToInt16(newdlg->textBox8->Text), 2);
-			//Student->SetTest(newdlg->textBox11->Text);
-			//Student->SetTestF(newdlg->textBox12->Text);
-			//Student->SetRevision(newdlg->textBox13->Text);
-			//Student->SetRevisionF(newdlg->textBox14->Text);
-			//Student->SetProtection(newdlg->textBox15->Text);
-			//Student->SetProtectionF(newdlg->textBox16->Text);
 			dataGridView1->Rows->Add(Student->Number, Student->TName, Student->Address, Student->Phone_number,
-				Student->Post, Student->Wages, Student->Deadline);
+				Student->Post, Student->Wages, Student->Deadline); //Додавання даних до dataGridView1
 			CountDataGrid++;
 			button1->Enabled = true;
 			checkBox1->Enabled = true;
 			MessageBox::Show("Запись добавлена!", "Information", MessageBoxButtons::OK, MessageBoxIcon::Information);
-			return;
+			return;  //повернення в головну програму
 		}
 	}
 	private: System::Void button5_Click(System::Object^ sender, System::EventArgs^ e) {       //Кнопка выхода
@@ -468,7 +452,7 @@ namespace Myproject {
 	}
 	private: System::Void button6_Click(System::Object^ sender, System::EventArgs^ e) {     //Кнопка удаления 
 		System::Windows::Forms::DialogResult dialres;
-		dialres = MessageBox::Show("Вы точно хотите удалить запись?", "Удалить?", MessageBoxButtons::OKCancel, MessageBoxIcon::Warning);
+		dialres = MessageBox::Show("Вы точно хотите удалить запись?", "Удалить?", MessageBoxButtons::OKCancel, MessageBoxIcon::Warning); //Выводим предупреждение
 		if (dialres == System::Windows::Forms::DialogResult::OK) {   //Если отвечаем ОК
 			if (this->dataGridView1->SelectedRows->Count > 0 &&
 				this->dataGridView1->SelectedRows[0]->Index !=

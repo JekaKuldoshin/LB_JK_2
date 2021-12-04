@@ -6,7 +6,7 @@ using namespace System;
 
 using namespace System::Collections::Generic;
 
-ref class TScreen :
+private ref class TScreen :
 	public TObject
 {
 public:

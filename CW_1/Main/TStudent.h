@@ -2,7 +2,7 @@
 #include "TObject.h"
 using namespace System;
 
-ref class TStudent :
+private ref class TStudent :
 	public TObject
 {
 public:
