@@ -231,7 +231,7 @@ namespace Myproject {
 			// exitToolStripMenuItem
 			// 
 			this->exitToolStripMenuItem->Name = L"exitToolStripMenuItem";
-			this->exitToolStripMenuItem->Size = System::Drawing::Size(116, 26);
+			this->exitToolStripMenuItem->Size = System::Drawing::Size(224, 26);
 			this->exitToolStripMenuItem->Text = L"Exit";
 			this->exitToolStripMenuItem->Click += gcnew System::EventHandler(this, &Form1::button5_Click);
 			// 
@@ -248,14 +248,14 @@ namespace Myproject {
 			// aboutToolStripMenuItem
 			// 
 			this->aboutToolStripMenuItem->Name = L"aboutToolStripMenuItem";
-			this->aboutToolStripMenuItem->Size = System::Drawing::Size(149, 26);
+			this->aboutToolStripMenuItem->Size = System::Drawing::Size(224, 26);
 			this->aboutToolStripMenuItem->Text = L"Help file";
 			this->aboutToolStripMenuItem->Click += gcnew System::EventHandler(this, &Form1::aboutToolStripMenuItem_Click);
 			// 
 			// aboutToolStripMenuItem1
 			// 
 			this->aboutToolStripMenuItem1->Name = L"aboutToolStripMenuItem1";
-			this->aboutToolStripMenuItem1->Size = System::Drawing::Size(149, 26);
+			this->aboutToolStripMenuItem1->Size = System::Drawing::Size(224, 26);
 			this->aboutToolStripMenuItem1->Text = L"About";
 			this->aboutToolStripMenuItem1->Click += gcnew System::EventHandler(this, &Form1::aboutToolStripMenuItem1_Click);
 			// 
