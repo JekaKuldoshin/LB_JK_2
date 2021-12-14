@@ -1,39 +1,51 @@
-//#include "Fun.h"
-//
-////template <typename T>
-////T min1(T first, T second) {              //Находим минимальное
-////
-////    assert(!sdigit(first) && !sdigit(second) && "Not a digit");
-////
-////
-////    if (first < second)
-////    {
-////        return first;
-////    }
-////    else return second;
-////
-////}
-//
-////template <typename T>
-////void sort1(vector <T>& mas) {
-////    for (int i = 0; i < mas_size; i++) {
-////        for (int j = i + 1; j < mas.size(); j++) {
-////            if (mas[i] > mas[j]) {
-////                swap(mas[i], mas[j]);
-////            }
-////        }
-////
-////    }
-////}
-////
-////template <typename T>
-////void sum1(vector <T> mas) {
-////    T a = 0;
-////    
-////    for (int i = 0; i < mas.size(); i++) {
-////        if (mas[i] > 0) {
-////            a += mas[i];
-////        }
-////    }
-////    return a;
-////}
+#include "Fun.h"
+
+
+void Test_min() {
+
+	vector<int> vec_i{ 2, 7, -3, - 1, -10 };
+	assert(Min(vec_i) == -10 && "Проверка на минимальное целое число было выполненно не правильно! Проверь данный код!");
+
+	vector<float> vec_f{ 2.5, 7.5, -3.5, -1.5, -10.5 };
+	assert(Min(vec_f) == -10.5 && "Проверка на минимальное число с плавующей точкой было выполненно не правильно! Проверь данный код!");
+
+	vector<char> vec_ch{ 'a', 'b', 'c', 'B','C' };
+	assert(Min(vec_ch) == 'B' && "Проверка на минимальный символ было выполненно не правильно! Проверь данный код!");
+
+}
+
+void Test_sort() {
+
+	vector<int> vec_s_i{ 1,2,3,4,5 };
+	vector<int> vec_i{ 5,3,2,4,1 };
+	Sort(vec_i);
+	for (int i = 0; i < vec_s_i.size(); ++i)
+		assert(vec_s_i[i] == vec_i[i] && "Проверка на сортировку целых чисел было выполненно не правильно! Проверь данный код!");
+
+	vector<float> vec_s_f{ 1.1, 2.2, 3.3, 4.4, 5.5 };
+	vector<float> vec_f{ 5.5, 3.3, 2.2, 4.4, 1.1 };
+	Sort(vec_f);
+	for (int i = 0; i < vec_s_f.size(); ++i)
+		assert(vec_s_f[i] == vec_f[i] && "Проверка на сортировку чисел с плавующей точкой было выполненно не правильно! Проверь данный код!");
+
+	vector<char> vec_s_ch{ 'A', 'B', 'C', 'a', 'b', 'c' };
+	vector<char> vec_ch{ 'c', 'b', 'a', 'C', 'B', 'A' };
+	Sort(vec_ch);
+	for (int i = 0; i < vec_s_ch.size(); ++i)
+		assert(vec_s_ch[i] == vec_ch[i] && "Проверка на сортировку символов было выполненно не правильно! Проверь данный код!");
+
+}
+
+void Test_sum() {
+
+	vector<int> vect_i{ -2, -1, 0, 1, 2 };
+	assert(Sum(vect_i) == 3 && "Проверка на суммирование целых чисел было выполненно не правильно! Проверь данный код!");
+
+	vector<float> vect_f{ 2.2, 2.3, -5.4, 3.4, -10.2, 1.1 };
+	assert(Sum(vect_f) == 9 && "Проверка на суммирование чисел с плавующей точкой было выполненно не правильно! Проверь данный код!");
+
+	vector<char> vect_ch{ 'c','a','b' };
+	assert(Sum(vect_ch) == '&' && "Проверка на суммирование символов было выполненно не правильно! Проверь данный код!");
+
+
+}

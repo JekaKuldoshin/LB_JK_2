@@ -6,38 +6,43 @@
 #include "Fun.h"
 
 int main() {
+
 	SetConsoleCP(1251);
 	SetConsoleOutputCP(1251);
 
-	//MIN
-	int a = 6;
-	int b = 10;
-	cout <<"Минимальное число -> " << min1(a, b);
-	assert(min1(a, b) == a && "а не больше б");
+	Test_min();                        //Для начало мы проводим тестирование работоспособности функций, а потом уже только проходим по главному проекту!
+	Test_sort();
+	Test_sum();
 
+	vector<int> vect_i{ -3, -10, 5, 7, 17 };             
+	vector<float> vect_f{ -3.3, -10.5, 5.2, 7.6, 17.1 };
+	vector<char> vect_ch{ 'c','a','b' };
 
-	cout << endl << endl;
+	cout << "а) min() – нахождения минимального" << endl;
+	cout << Min(vect_i) << endl;                   //Прогоняю через функ-ю и вывожу результат, минимальное число
+	cout << Min(vect_f) << endl;
+	cout << Min(vect_ch) << endl;
+	cout << "------------------------" << endl;
 
-	//SORT
+	cout << "б) sort() – сортировка массива по возрастанию" << endl;
+	Sort(vect_i);                                 //Прогоняю через функ-ю и вывожу результат, отсортированные данные
+	for (auto i : vect_i)
+		cout << i << "     ";
+	cout << endl;
 
-	vector <int> mas1 = { -1,22,13,-43,55,16 };
-	vector <int> mas2 = { 11,52,-13,-44,53,76 };
-	sort1(mas1);
+	Sort(vect_f);
+	for (auto i : vect_f)
+		cout << i << "   ";
+	cout << endl;
 
-	for (int i = 0; i < mas1.size(); i++) {
-		cout << mas1[i] << "\t";
-		assert(mas1[i] == mas2[i] && "Не правильно отсортированно");
-	}
-
-	cout << endl << endl;
-
-	/*SUM*/
-
-	cout << "Сумма: "; 
-	cout << sum1(mas2);
-	assert(sum1(mas2) == 3 && "Сумма не правильная!");
-
+	Sort(vect_ch);
+	for (auto i : vect_ch)
+		cout << i << "   ";
+	cout << endl;
+	cout << "------------------------" << endl;
+	cout << "в) sum() – нахождения в массиве суммы положительных." << endl;
+	cout << Sum(vect_i) << endl;                  //Прогоняю через функ-ю и вывожу результат, сумму данных
+	cout << Sum(vect_f) << endl;
+	cout << Sum(vect_ch) << endl;
+	cout << "------------------------" << endl;
 }
-
-
-
